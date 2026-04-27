@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <title>requirements</title>
+    <link rel="stylesheet" href="entry.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner l-container">
+      <div class="site-header__branding">
+        <h1 class="site-header__logo">
+          <a href="./" class="site-header__logo-link">
+            <img src="./img/logo_header.png" alt="岩崎税理士事務所">
+          </a>
+        </h1>
+
+        <p class="site-header__label">採用サイト</p>
+      </div>
+
+      <nav class="site-header__nav" aria-label="グローバルナビゲーション">
+        <ul class="site-header__list">
+          <li class="site-header__item">
+            <a href="#recruit" class="site-header__link">募集職種</a>
+          </li>
+          <li class="site-header__item">
+            <a href="#feature" class="site-header__link">特徴</a>
+          </li>
+          <li class="site-header__item">
+            <a href="#message" class="site-header__link">メッセージ</a>
+          </li>
+          <li class="site-header__item">
+            <a href="#story" class="site-header__link">インタビュー</a>
+          </li>
+          <li class="site-header__item">
+            <a href="#entry" class="site-header__link">Entry</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <header class="sp-header">
+    <a href="/" class="sp-header__brand" aria-label="岩崎新税理士事務所 採用サイト">
+      <img src="img/logo_header.png" alt="岩崎新税理士事務所">
+      <span class="sp-header__site-label">採用サイト</span>
+    </a>
+
+    <button class="sp-header__menu" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="sp-nav-panel">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none" aria-hidden="true">
+      <rect width="20" height="1" fill="white"/>
+      <rect y="8" width="20" height="1" fill="white"/>
+      <rect y="16" width="20" height="1" fill="white"/>
+    </svg>
+    </button>
+    <div class="sp-nav-overlay" id="sp-nav-overlay" aria-hidden="true"></div>
+
+    <div class="sp-nav-panel" id="sp-nav-panel" aria-hidden="true">
+      <nav class="sp-nav" aria-label="スマートフォンメニュー">
+        <ul class="sp-nav__list">
+          <li class="sp-nav__item"><a href="#message">募集職種</a></li>
+          <li class="sp-nav__item"><a href="#story">特徴</a></li>
+          <li class="sp-nav__item"><a href="#recruit">メッセージ</a></li>
+          <li class="sp-nav__item"><a href="#requirements">インタビュー</a></li>
+          <li class="sp-nav__item"><a href="#entry">Entry</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+    <section class="hero">
+    <!-- 等高線 -->
+    <div class="hero__ornament" aria-hidden="true">
+    <img src="img/contour_lower.png" alt="">
+    </div>
+    <div class="hero__inner">
+     <div class="hero__copy">
+      <p class="hero__subtitle">Entry</p>
+      <h1 class="hero__title">エントリーフォーム/ご相談</h1>
+     </div>
+    </div>
+    </section>
+    
+<section class="page">
+  <div class="container">
+    <div class="form-wrap">
+
+      <div class="form-lead">
+        <p>
+          この度は、岩崎新税理士事務所の採用ページをご覧いただきありがとうございます。<br>
+          下記フォームよりご連絡ください。内容を確認の上、担当よりご返信いたします。
+        </p>
+      </div>
+
+      <!-- 送信先 -->
+      <form class="entry-form" action="./php/send.php" method="post" novalidate>
+        <input type="hidden" name="csrf_token" value="">
+        <div class="hp" aria-hidden="true">
+          <label>空欄のままにしてください <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="form-grid">
+
+          <!-- お問い合わせ項目（ラジオ） -->
+          <div class="field field--full">
+            <p class="label">お問い合わせ項目<span class="req">※</span></p>
+
+            <div class="radio-group" role="radiogroup" aria-label="お問い合わせ項目">
+              <label class="radio">
+                <input type="radio" name="contact_type" value="エントリーする" checked required>
+                <span class="radio__mark" aria-hidden="true"></span>
+                <span class="radio__text">エントリーする</span>
+              </label>
+
+              <label class="radio">
+                <input type="radio" name="contact_type" value="相談をしたい" required>
+                <span class="radio__mark" aria-hidden="true"></span>
+                <span class="radio__text">相談をしたい</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field field--full">
+            <label class="label" for="role">希望職種 <span class="req">*</span></label>
+            <div class="select">
+              <select id="role" name="role" required>
+                <option value="">選択してください</option>
+                <option value="税理士補助/経験者採用">税理士補助/経験者採用</option>
+                <option value="税理士補助/未経験者採用">税理士補助/未経験者採用</option>
+                <option value="税理士補助/パート採用">税理士補助/パート採用</option>
+                <option value="その他">未定/相談したい</option>
+              </select>
+            </div>
+            <p class="hint">※ご相談のみの場合も「未定/相談したい」を選択してください。</p>
+          </div>
+
+          <div class="field">
+            <label class="label" for="last_name">お名前（姓） <span class="req">*</span></label>
+            <input id="last_name" name="last_name" type="text" required autocomplete="family-name" placeholder="例）岩崎">
+          </div>
+          <div class="field">
+            <label class="label" for="first_name">お名前（名） <span class="req">*</span></label>
+            <input id="first_name" name="first_name" type="text" required autocomplete="given-name" placeholder="例）太郎">
+          </div>
+
+          <div class="field">
+            <label class="label" for="last_kana">フリガナ（セイ） <span class="req">*</span></label>
+            <input id="last_kana" name="last_kana" type="text" required autocomplete="off" placeholder="例）イワサキ">
+          </div>
+          <div class="field">
+            <label class="label" for="first_kana">フリガナ（メイ） <span class="req">*</span></label>
+            <input id="first_kana" name="first_kana" type="text" required autocomplete="off" placeholder="例）タロウ">
+          </div>
+
+          <div class="field field--full">
+            <label class="label" for="email">メールアドレス <span class="req">*</span></label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="example@example.com">
+          </div>
+
+          <div class="field field--full">
+            <label class="label" for="tel">お電話番号</label>
+            <input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="090-0000-0000">
+          </div>
+
+          <div class="field field--full">
+            <label class="label" for="contact_pref">ご希望の連絡方法 <span class="req">*</span></label>
+            <div class="select">
+              <select id="contact_pref" name="contact_pref" required>
+                <option value="">選択してください</option>
+                <option value="メール">メール</option>
+                <option value="電話">電話</option>
+                <option value="どちらでも">どちらでも</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field field--full">
+            <label class="label" for="birthdate">生年月日 <span class="req">*</span></label>
+            <input id="birthdate" type="date" name="birthdate" required placeholder="YYYY-MM-DD">
+            <p class="hint">※ カレンダーが表示されない場合は、1990-01-01 の形式で入力してください</p>
+          </div>
+
+          <div class="field field--full">
+            <label class="label" for="career">ご経歴 <span class="req">*</span></label>
+            <textarea id="career" name="career" required placeholder="例：
+・2018年〜2022年：○○会計事務所にて税務補助業務
+・2022年〜現在：△△株式会社 経理担当 など"></textarea>
+          </div>
+
+          <div class="field field--full">
+            <label class="label" for="qualification">保有資格 <span class="req">*</span></label>
+            <textarea id="qualification" name="qualification" required placeholder="例：
+・日商簿記2級
+・税理士試験 科目合格（簿記論）
+・MOS Excel Expert など"></textarea>
+          </div>
+
+          <div class="field field--full">
+            <label class="label" for="motivation">志望動機・PR <span class="req">*</span></label>
+            <textarea id="motivation" name="motivation" required placeholder="簡単で構いません。
+志望理由や、これまでの経験・強み、相談したい内容などをご記入ください。"></textarea>
+          </div>
+
+          <div class="field field--full">
+            <div class="check">
+              <input type="checkbox" id="agree" name="agree" value="1" required>
+
+              <label for="agree">
+                個人情報の取扱いに同意します <span class="req">*</span>
+              </label>
+
+              <span>
+                （<button type="button" class="privacy-link" data-modal-open="privacyModal">内容を見る</button>）
+              </span>
+            </div>
+
+            <p class="hint">※送信前に内容をご確認ください。</p>
+          </div>
+
+          <div class="field field--full form-actions">
+            <button class="submit" type="submit">送信する</button>
+            <p class="fineprint">
+              送信後、自動返信メールが届きます。届かない場合は迷惑メールをご確認ください。
+            </p>
+          </div>
+
+        </div><!-- /.form-grid -->
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Privacy Modal（HTML内に含める） ===== -->
+<div class="modal" id="privacyModal" aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" tabindex="-1">
+    <h2 class="modal__title" id="privacyTitle">個人情報の取り扱いについて</h2>
+
+    <div class="modal__body">
+      <p>当社では、採用活動にあたりご入力いただいた個人情報を、以下の目的の範囲内で利用いたします。</p>
+      <ul>
+        <li>採用選考およびこれに関するご連絡</li>
+        <li>応募内容の確認、必要に応じたご連絡</li>
+      </ul>
+      <p>
+        取得した個人情報は、上記目的以外には利用せず、
+        法令に基づく場合を除き第三者へ提供することはありません。
+      </p>
+      <p>
+        また、個人情報は適切に管理し、漏えい・紛失・改ざん等が起こらないよう、
+        必要な安全対策を講じます。
+      </p>
+      <p>
+        詳細につきましては、当社の「プライバシーポリシー」をご確認ください。
+      </p>
+    </div>
+
+    <button type="button" class="modal__closeBtn" data-modal-close>close</button>
+  </div>
+</div>
+  <footer class="site-footer">
+   <div class="site-footer__inner l-container">
+
+    <div class="site-footer__left">
+      <div class="site-footer__social">
+        <a href="#" class="site-footer__social-link" aria-label="X">
+          <img src="img/icon-X.svg" alt="X">
+        </a>
+        <a href="#" class="site-footer__social-link" aria-label="Instagram">
+          <img src="img/icon-Instagram.svg" alt="Instagram">
+        </a>
+        <a href="#" class="site-footer__social-link" aria-label="Facebook">
+          <img src="img/icon-facebook.svg" alt="Facebook">
+        </a>
+      </div>
+
+      <div class="site-footer__bottom">
+        <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+          <a href="#" class="site-footer__nav-link">アクセス</a>
+          <a href="#" class="site-footer__nav-link">プライバシーポリシー</a>
+          <a href="#" class="site-footer__nav-link">会社情報</a>
+        </nav>
+
+        <p class="site-footer__copy">
+          © 2025 Arata Tax Accountant Office.
+        </p>
+      </div>
+    </div>
+
+    <div class="site-footer__right">
+      <a href="./" class="site-header__logo-link">
+        <img src="./img/logo_header.png" alt="岩崎税理士事務所">
+      </a>
+    </div>
+
+   </div>
+  </footer>
+  
+  <script>
+    //ヘッダーの昇降
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('.site-header');
+
+    window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (Math.abs(currentScrollY - lastScrollY) < 5) return;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        header.classList.add('is-hidden');
+    } else {
+        header.classList.remove('is-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+    });
+
+    //ハンバーガー開閉のscript
+    document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.querySelector('.sp-header__menu');
+    const navPanel = document.querySelector('.sp-nav-panel');
+    const overlay = document.querySelector('.sp-nav-overlay');
+    const navLinks = document.querySelectorAll('.sp-nav__item a');
+
+    if (!menuButton || !navPanel || !overlay) return;
+
+    const openNav = () => {
+      navPanel.classList.remove('is-closing');
+      overlay.classList.remove('is-closing');
+
+      navPanel.classList.add('is-open');
+      overlay.classList.add('is-open');
+      document.body.classList.add('is-nav-open');
+
+      menuButton.setAttribute('aria-expanded', 'true');
+      menuButton.setAttribute('aria-label', 'メニューを閉じる');
+      navPanel.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeNav = () => {
+      navPanel.classList.add('is-closing');
+      overlay.classList.add('is-closing');
+
+      navPanel.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('is-nav-open');
+
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'メニューを開く');
+      navPanel.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+
+      window.setTimeout(() => {
+        navPanel.classList.remove('is-closing');
+        overlay.classList.remove('is-closing');
+      }, 240);
+    };
+
+    const toggleNav = () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    };
+
+    menuButton.addEventListener('click', toggleNav);
+    overlay.addEventListener('click', closeNav);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+        closeNav();
+      }
+    });
+  });
+  // ===== プライバシーモーダル（HTML内に含める版）=====
+document.addEventListener('DOMContentLoaded', () => {
+  const openBtns = document.querySelectorAll('[data-modal-open]');
+  const closeSel = '[data-modal-close]';
+
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+
+    const panel = modal.querySelector('.modal__panel');
+    panel && panel.focus();
+
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+  }
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-modal-open');
+      const modal = document.getElementById(id);
+      openModal(modal);
+    });
+  });
+
+  // backdrop / close ボタン
+  document.addEventListener('click', (e) => {
+    const modal = e.target.closest('.modal');
+    if (!modal) return;
+
+    if (e.target.matches(closeSel)) {
+      closeModal(modal);
+    }
+  });
+
+  // ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const modal = document.querySelector('.modal.is-open');
+    if (modal) closeModal(modal);
+  });
+
+  // 念のため：ボタンが0件ならconsoleに出す
+  if (!openBtns.length) {
+    console.warn('[modal] open button not found');
+  }
+});
+
+(() => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  let lastY = window.scrollY || 0;
+  let ticking = false;
+
+  // どれくらいスクロールしたら隠し始めるか
+  const START_HIDE_Y = 80;
+  // 小刻みスクロールでチラつかないための閾値
+  const DELTA = 8;
+
+  function isMenuOpen(){
+    const sp = document.querySelector('.spmenu');
+    return sp && sp.classList.contains('is-open');
+  }
+
+  function onScroll(){
+    const y = window.scrollY || 0;
+    const diff = y - lastY;
+
+    // SPメニュー開いてる時はヘッダー固定（勝手に消えない）
+    if (isMenuOpen()){
+      header.classList.remove('is-hidden');
+      lastY = y;
+      return;
+    }
+
+    // 上部では常に表示
+    if (y <= START_HIDE_Y){
+      header.classList.remove('is-hidden');
+      lastY = y;
+      return;
+    }
+
+    // ほぼ動いてないなら何もしない（チラつき防止）
+    if (Math.abs(diff) < DELTA){
+      lastY = y;
+      return;
+    }
+
+    // 下にスクロール→隠す / 上にスクロール→表示
+    if (diff > 0){
+      header.classList.add('is-hidden');
+    } else {
+      header.classList.remove('is-hidden');
+    }
+
+    lastY = y;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      onScroll();
+      ticking = false;
+    });
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
