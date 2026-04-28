@@ -731,27 +731,37 @@ button {
 /* #endregion */
 
 /* Page */
-.page{ padding: 18px 0 72px; }
-
+.page{ 
+  padding: 18px 0 18px;
+  background-color: #F4F2EE;
+}
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
+  box-sizing: border-box;
+}
 .form-wrap{
-  width: min(740px, 100%);
+  width: min(568px, 100%);
   margin: 0 auto;
 }
 
 .form-lead{
-  text-align:center;
-  margin: 0 0 18px;
-  color: rgba(0,0,0,.68);
-  font-size: 13px;
-  line-height: 2.1;
+font-family: Noto Sans JP;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 26px;
+letter-spacing: 10%;
+text-align: center;
+
 }
 
 /* Card */
 .entry-form{
   background: var(--card);
-  border: 1px solid rgba(0,0,0,.10);
   border-radius: 18px;
-  box-shadow: 0 14px 30px rgba(0,0,0,.06);
   padding: 24px 24px 10px;
 }
 
@@ -759,18 +769,20 @@ button {
 .form-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px 16px;
+  gap: 77px 16px;
 }
 .field{ display:block; }
-.field--full{ grid-column: 1 / -1; }
+.field--full{ 
+  grid-column: 1 / -1;
+ }
 
 .label{
-  display:block;
-  font-size: 12px;
-  letter-spacing: .08em;
-  color: rgba(0,0,0,.72);
-  margin: 0 0 6px;
-  font-weight: 700;
+  font-family: Noto Sans JP;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 17px;
+  line-height: 20.11px;
+  letter-spacing: 20%;
 }
 
 .req{
@@ -786,7 +798,6 @@ input, textarea, select{
   color: rgba(0,0,0,.85);
   background: #fff;
   border: 1px solid rgba(0,0,0,.14);
-  border-radius: 10px;
   padding: 12px 12px;
   outline: none;
   transition: border-color .15s ease, box-shadow .15s ease;
@@ -834,6 +845,7 @@ select{
   gap: 10px;
   font-size: 13px;
   color: rgba(0,0,0,.78);
+  
 }
 .check input{
   width: 18px;
@@ -852,13 +864,18 @@ select{
   border: none;
   background: #111;
   color:#fff;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: .08em;
   padding: 12px 24px;
   border-radius: 999px;
   cursor:pointer;
   transition: transform .15s ease, opacity .15s ease;
+  font-family: Noto Sans JP;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 20.11px;
+  letter-spacing: 10%;
+  text-align: center;
+
 }
 .submit:hover{ transform: translateY(-1px); opacity:.95; }
 
@@ -993,13 +1010,21 @@ select{
 /* closeボタン（画像っぽく） */
 .modal__closeBtn{
   display: block;
-  margin: 16px auto 0;
+  margin: 16px 0 0 auto;  
   padding: 12px 36px;
   border: 0;
   background: #111;
   color: #fff;
   border-radius: 999px;
   cursor: pointer;
+  font-family: Noto Sans JP;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 10.05px;
+  letter-spacing: 10%;
+  text-align: center;
+
 }
 
 /* リンク風ボタン */
@@ -1022,4 +1047,11 @@ select{
   margin-top: 2px;
   flex: 0 0 auto;
   cursor: pointer;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }

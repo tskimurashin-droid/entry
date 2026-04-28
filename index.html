@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-    <title>Entry|岩崎新税理士事務所</title>
+    <title>requirements</title>
     <link rel="stylesheet" href="entry.css">
     <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
@@ -27,19 +27,19 @@
       <nav class="site-header__nav" aria-label="グローバルナビゲーション">
         <ul class="site-header__list">
           <li class="site-header__item">
-            <a href="#recruit" class="site-header__link">募集職種</a>
+            <a href="../requirements/" class="site-header__link">募集職種</a>
           </li>
           <li class="site-header__item">
-            <a href="#feature" class="site-header__link">特徴</a>
+            <a href="../top_page/index.html#feature" class="site-header__link">特徴</a>
           </li>
           <li class="site-header__item">
-            <a href="#message" class="site-header__link">メッセージ</a>
+            <a href="../top_page/index.html#message" class="site-header__link">メッセージ</a>
           </li>
           <li class="site-header__item">
-            <a href="#story" class="site-header__link">インタビュー</a>
+            <a href="../story/" class="site-header__link">インタビュー</a>
           </li>
           <li class="site-header__item">
-            <a href="#entry" class="site-header__link">Entry</a>
+            <a href="./index.html" class="site-header__link">Entry</a>
           </li>
         </ul>
       </nav>
@@ -63,11 +63,11 @@
     <div class="sp-nav-panel" id="sp-nav-panel" aria-hidden="true">
       <nav class="sp-nav" aria-label="スマートフォンメニュー">
         <ul class="sp-nav__list">
-          <li class="sp-nav__item"><a href="#message">募集職種</a></li>
-          <li class="sp-nav__item"><a href="#story">特徴</a></li>
-          <li class="sp-nav__item"><a href="#recruit">メッセージ</a></li>
-          <li class="sp-nav__item"><a href="#requirements">インタビュー</a></li>
-          <li class="sp-nav__item"><a href="#entry">Entry</a></li>
+          <li class="sp-nav__item"><a href="../requirements/">募集職種</a></li>
+          <li class="sp-nav__item"><a href="../top_page/index.html#feature">特徴</a></li>
+          <li class="sp-nav__item"><a href="../top_page/index.html#message">メッセージ</a></li>
+          <li class="sp-nav__item"><a href="../story/">インタビュー</a></li>
+          <li class="sp-nav__item"><a href="./index.html">Entry</a></li>
         </ul>
       </nav>
     </div>
@@ -91,8 +91,11 @@
 
       <div class="form-lead">
         <p>
-          この度は、岩崎新税理士事務所の採用ページをご覧いただきありがとうございます。<br>
-          下記フォームよりご連絡ください。内容を確認の上、担当よりご返信いたします。
+          この度は、岩崎新税理士事務所の採用に<br>
+          ご興味をお持ちいただき、誠にありがとうございます。<br>
+          <br>
+          下記フォームに必要事項をご記入のうえ、ご応募ください。<br>
+          後日、担当者よりメールにてご連絡いたします。<br>
         </p>
       </div>
 
@@ -139,21 +142,21 @@
           </div>
 
           <div class="field">
-            <label class="label" for="last_name">お名前（姓） <span class="req">*</span></label>
-            <input id="last_name" name="last_name" type="text" required autocomplete="family-name" placeholder="例）岩崎">
+            <label class="label" for="last_name">お名前<span class="req">*</span></label>
+            <input id="last_name" name="last_name" type="text" required autocomplete="family-name" placeholder="山田">
           </div>
           <div class="field">
-            <label class="label" for="first_name">お名前（名） <span class="req">*</span></label>
-            <input id="first_name" name="first_name" type="text" required autocomplete="given-name" placeholder="例）太郎">
+            <label class="label" for="first_name"><span class="req">　</span></label>
+            <input id="first_name" name="first_name" type="text" required autocomplete="given-name" placeholder="太郎">
           </div>
 
           <div class="field">
-            <label class="label" for="last_kana">フリガナ（セイ） <span class="req">*</span></label>
-            <input id="last_kana" name="last_kana" type="text" required autocomplete="off" placeholder="例）イワサキ">
+            <label class="label" for="last_kana">フリガナ <span class="req">*</span></label>
+            <input id="last_kana" name="last_kana" type="text" required autocomplete="off" placeholder="ヤマダ">
           </div>
           <div class="field">
-            <label class="label" for="first_kana">フリガナ（メイ） <span class="req">*</span></label>
-            <input id="first_kana" name="first_kana" type="text" required autocomplete="off" placeholder="例）タロウ">
+            <label class="label" for="first_kana"><span class="req">　</span></label>
+            <input id="first_kana" name="first_kana" type="text" required autocomplete="off" placeholder="タロウ">
           </div>
 
           <div class="field field--full">
@@ -163,7 +166,7 @@
 
           <div class="field field--full">
             <label class="label" for="tel">お電話番号</label>
-            <input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="090-0000-0000">
+            <input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="0901234567">
           </div>
 
           <div class="field field--full">
@@ -179,50 +182,48 @@
           </div>
 
           <div class="field field--full">
-            <label class="label" for="birthdate">生年月日 <span class="req">*</span></label>
+            <label class="label" for="birthdate">生年月日 <span class="req">*</span>
+              <span class="hint">※ カレンダーが表示されない場合は、1990-01-01 の形式で入力してください</span>
+            </label>
             <input id="birthdate" type="date" name="birthdate" required placeholder="YYYY-MM-DD">
-            <p class="hint">※ カレンダーが表示されない場合は、1990-01-01 の形式で入力してください</p>
           </div>
 
           <div class="field field--full">
             <label class="label" for="career">ご経歴 <span class="req">*</span></label>
-            <textarea id="career" name="career" required placeholder="例：
-・2018年〜2022年：○○会計事務所にて税務補助業務
-・2022年〜現在：△△株式会社 経理担当 など"></textarea>
+            <textarea id="career" name="career" required></textarea>
           </div>
 
           <div class="field field--full">
             <label class="label" for="qualification">保有資格 <span class="req">*</span></label>
-            <textarea id="qualification" name="qualification" required placeholder="例：
-・日商簿記2級
-・税理士試験 科目合格（簿記論）
-・MOS Excel Expert など"></textarea>
+            <textarea id="qualification" name="qualification" required></textarea>
           </div>
 
           <div class="field field--full">
             <label class="label" for="motivation">志望動機・PR <span class="req">*</span></label>
-            <textarea id="motivation" name="motivation" required placeholder="簡単で構いません。
-志望理由や、これまでの経験・強み、相談したい内容などをご記入ください。"></textarea>
+            <textarea id="motivation" name="motivation" required placeholder="簡単で構いません／相談内容だけでもOK"></textarea>
           </div>
 
           <div class="field field--full">
             <div class="check">
-              <input type="checkbox" id="agree" name="agree" value="1" required>
-
               <label for="agree">
-                個人情報の取扱いに同意します <span class="req">*</span>
+                当社の
               </label>
-
               <span>
-                （<button type="button" class="privacy-link" data-modal-open="privacyModal">内容を見る</button>）
+                <button type="button" class="privacy-link" data-modal-open="privacyModal">プライバシーポリシー</button>
               </span>
+              <label for="agree">
+                に同意のうえ、送信してください。(必須)
+              </label>
             </div>
 
-            <p class="hint">※送信前に内容をご確認ください。</p>
+            <div class="check">
+            <input type="checkbox" id="agree" name="agree" value="1" required>
+              プライバシーポリシーに同意する
+            </div>
           </div>
 
           <div class="field field--full form-actions">
-            <button class="submit" type="submit">送信する</button>
+            <button class="submit" type="submit">確認画面に進む</button>
             <p class="fineprint">
               送信後、自動返信メールが届きます。届かない場合は迷惑メールをご確認ください。
             </p>
@@ -257,7 +258,7 @@
         必要な安全対策を講じます。
       </p>
       <p>
-        詳細につきましては、当社の「プライバシーポリシー」をご確認ください。
+        詳細につきましては、当社の「<a href="https://iwasaki-taxoffice.jp/privacy/" target="_blank" class="privacy-link">プライバシーポリシー</a>」をご確認ください。
       </p>
     </div>
 
@@ -269,21 +270,21 @@
 
     <div class="site-footer__left">
       <div class="site-footer__social">
-        <a href="#" class="site-footer__social-link" aria-label="X">
+        <a href="https://x.com/taxmania11" target="_blank" class="site-footer__social-link" aria-label="X">
           <img src="img/icon-X.svg" alt="X">
         </a>
-        <a href="#" class="site-footer__social-link" aria-label="Instagram">
+        <a href="https://www.instagram.com/iwasaki_tax_office/" target="_blank" class="site-footer__social-link" aria-label="Instagram">
           <img src="img/icon-Instagram.svg" alt="Instagram">
         </a>
-        <a href="#" class="site-footer__social-link" aria-label="Facebook">
+         <a href="https://www.facebook.com/people/%E5%B2%A9%EF%A8%91%E6%96%B0%E7%A8%8E%E7%90%86%E5%A3%AB%E4%BA%8B%E5%8B%99%E6%89%80/100089479747477/" target="_blank"class="site-footer__social-link" aria-label="Facebook">
           <img src="img/icon-facebook.svg" alt="Facebook">
         </a>
       </div>
 
       <div class="site-footer__bottom">
         <nav class="site-footer__nav" aria-label="フッターナビゲーション">
-          <a href="#" class="site-footer__nav-link">プライバシーポリシー</a>
-          <a href="#" class="site-footer__nav-link">会社情報</a>
+          <a href="https://iwasaki-taxoffice.jp/privacy/" target="_blank" class="site-footer__nav-link">プライバシーポリシー</a>
+          <a href="https://iwasaki-taxoffice.jp/office/" target="_blank" class="site-footer__nav-link">会社情報</a>
         </nav>
 
         <p class="site-footer__copy">
