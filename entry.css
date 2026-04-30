@@ -755,6 +755,7 @@ font-size: 16px;
 line-height: 26px;
 letter-spacing: 10%;
 text-align: center;
+margin-top: 85px;
 
 }
 
@@ -769,7 +770,7 @@ text-align: center;
 .form-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
-  gap: 77px 16px;
+  gap: 59px 16px;
 }
 .field{ display:block; }
 .field--full{ 
@@ -786,9 +787,13 @@ text-align: center;
 }
 
 .req{
-  color: #9b1c1c;
-  font-weight: 700;
-  margin-left: 4px;
+  color: #888888;
+  font-family: Noto Sans JP;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 13px;
+  line-height: 20.11px;
+  letter-spacing: 20%;
 }
 
 input, textarea, select{
@@ -833,10 +838,13 @@ select{
 }
 
 .hint{
-  margin: 6px 0 0;
-  font-size: 11px;
-  color: rgba(0,0,0,.55);
-  line-height: 1.8;
+  font-family: Noto Sans JP;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  color:#AAAAAA;
 }
 
 .check{
@@ -860,14 +868,23 @@ select{
 }
 
 .submit{
-  appearance:none;
+  appearance: none;
   border: none;
   background: #111;
-  color:#fff;
-  padding: 12px 24px;
-  border-radius: 999px;
-  cursor:pointer;
+  color: #fff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 274px;
+  height: 77px;
+  padding: 16px 8px;
+  border-radius: 40px;
+
+  cursor: pointer;
   transition: transform .15s ease, opacity .15s ease;
+
   font-family: Noto Sans JP;
   font-weight: 500;
   font-style: Medium;
@@ -875,6 +892,7 @@ select{
   line-height: 20.11px;
   letter-spacing: 10%;
   text-align: center;
+
 
 }
 .submit:hover{ transform: translateY(-1px); opacity:.95; }
@@ -1054,4 +1072,84 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* =========================
+   Radio (Entry / Consult)
+========================= */
+
+/* お問い合わせ項目全体を横並び */
+.field--contact-type{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* 見出しの余白をなくして横並びしやすく */
+.field--contact-type .label{
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+/* ラジオ2つを横並び */
+.field--contact-type .radio-group{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 0;
+}
+
+.radio{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  color: rgba(0,0,0,.72);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* お問い合わせ項目：見出しとラジオグループを横並び */
+.field--contact-type{
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* 見出し側 */
+.field--contact-type .label{
+  flex: 0 0 auto;
+  margin: 0;
+  padding-top: 2px;
+}
+
+/* ラジオボタン側：縦並びのまま */
+.field--contact-type .radio-group{
+  display: grid;
+  gap: 10px;
+  margin-top: 0;
+}
+
+/* プライバシーポリシー同意欄を中央寄せ */
+.field--privacy{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field--privacy .check{
+  justify-content: center;
+  width: fit-content;
+}
+
+.required-1{
+  font-family: Noto Sans JP;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 13px;
+  line-height: 20.11px;
+  letter-spacing: 20%;
+  color: #888888;
 }

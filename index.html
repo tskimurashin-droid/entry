@@ -109,26 +109,25 @@
         <div class="form-grid">
 
           <!-- お問い合わせ項目（ラジオ） -->
-          <div class="field field--full">
+          <div class="field field--full field--contact-type">
             <p class="label">お問い合わせ項目<span class="req">※</span></p>
 
-            <div class="radio-group" role="radiogroup" aria-label="お問い合わせ項目">
-              <label class="radio">
-                <input type="radio" name="contact_type" value="エントリーする" checked required>
-                <span class="radio__mark" aria-hidden="true"></span>
-                <span class="radio__text">エントリーする</span>
-              </label>
-
-              <label class="radio">
-                <input type="radio" name="contact_type" value="相談をしたい" required>
-                <span class="radio__mark" aria-hidden="true"></span>
-                <span class="radio__text">相談をしたい</span>
-              </label>
-            </div>
+          <div class="radio-group" role="radiogroup" aria-label="お問い合わせ項目">
+            <label class="radio">
+              <input type="radio" name="contact_type" value="エントリーする" checked required>
+              <span class="radio__mark" aria-hidden="true"></span>
+              <span class="radio__text">エントリーする</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="contact_type" value="相談をしたい" required>
+              <span class="radio__mark" aria-hidden="true"></span>
+              <span class="radio__text">相談をしたい</span>
+            </label>
           </div>
+        </div>
 
           <div class="field field--full">
-            <label class="label" for="role">希望職種 <span class="req">*</span></label>
+            <label class="label" for="role">希望職種 <span class="req">※</span></label>
             <div class="select">
               <select id="role" name="role" required>
                 <option value="">選択してください</option>
@@ -142,7 +141,7 @@
           </div>
 
           <div class="field">
-            <label class="label" for="last_name">お名前<span class="req">*</span></label>
+            <label class="label" for="last_name">お名前<span class="req">※</span></label>
             <input id="last_name" name="last_name" type="text" required autocomplete="family-name" placeholder="山田">
           </div>
           <div class="field">
@@ -151,7 +150,7 @@
           </div>
 
           <div class="field">
-            <label class="label" for="last_kana">フリガナ <span class="req">*</span></label>
+            <label class="label" for="last_kana">フリガナ <span class="req">※</span></label>
             <input id="last_kana" name="last_kana" type="text" required autocomplete="off" placeholder="ヤマダ">
           </div>
           <div class="field">
@@ -160,7 +159,7 @@
           </div>
 
           <div class="field field--full">
-            <label class="label" for="email">メールアドレス <span class="req">*</span></label>
+            <label class="label" for="email">メールアドレス <span class="req">※</span></label>
             <input id="email" name="email" type="email" required autocomplete="email" placeholder="example@example.com">
           </div>
 
@@ -170,40 +169,28 @@
           </div>
 
           <div class="field field--full">
-            <label class="label" for="contact_pref">ご希望の連絡方法 <span class="req">*</span></label>
-            <div class="select">
-              <select id="contact_pref" name="contact_pref" required>
-                <option value="">選択してください</option>
-                <option value="メール">メール</option>
-                <option value="電話">電話</option>
-                <option value="どちらでも">どちらでも</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field field--full">
-            <label class="label" for="birthdate">生年月日 <span class="req">*</span>
-              <span class="hint">※ カレンダーが表示されない場合は、1990-01-01 の形式で入力してください</span>
+            <label class="label" for="birthdate">生年月日
+              <span class="hint">※カレンダーが表示されない場合は、1990/01/01の形式で入力してください</span>
             </label>
             <input id="birthdate" type="date" name="birthdate" required placeholder="YYYY-MM-DD">
           </div>
 
           <div class="field field--full">
-            <label class="label" for="career">ご経歴 <span class="req">*</span></label>
+            <label class="label" for="career">ご経歴</label>
             <textarea id="career" name="career" required></textarea>
           </div>
 
           <div class="field field--full">
-            <label class="label" for="qualification">保有資格 <span class="req">*</span></label>
+            <label class="label" for="qualification">保有資格</label>
             <textarea id="qualification" name="qualification" required></textarea>
           </div>
 
           <div class="field field--full">
-            <label class="label" for="motivation">志望動機・PR <span class="req">*</span></label>
+            <label class="label" for="motivation">志望動機・PR <span class="req">※</span></label>
             <textarea id="motivation" name="motivation" required placeholder="簡単で構いません／相談内容だけでもOK"></textarea>
           </div>
 
-          <div class="field field--full">
+          <div class="field field--full field--privacy">
             <div class="check">
               <label for="agree">
                 当社の
@@ -212,7 +199,10 @@
                 <button type="button" class="privacy-link" data-modal-open="privacyModal">プライバシーポリシー</button>
               </span>
               <label for="agree">
-                に同意のうえ、送信してください。(必須)
+                に同意のうえ、送信してください。
+                <span class="required-1">
+                  (必須)
+                </span>
               </label>
             </div>
 
