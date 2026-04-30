@@ -811,8 +811,7 @@ input, textarea, select{
 textarea{ resize: vertical; min-height: 140px; }
 
 input:focus, textarea:focus, select:focus{
-  border-color: rgba(0,0,0,.35);
-  box-shadow: 0 0 0 4px rgba(0,0,0,.06);
+  box-shadow: none;
 }
 
 .select{
