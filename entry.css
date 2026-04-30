@@ -802,10 +802,10 @@ input, textarea, select{
   font-size: 13px;
   color: rgba(0,0,0,.85);
   background: #fff;
-  border: 1px solid rgba(0,0,0,.14);
   padding: 12px 12px;
   outline: none;
   transition: border-color .15s ease, box-shadow .15s ease;
+  border: none;
 }
 
 textarea{ resize: vertical; min-height: 140px; }
@@ -1152,4 +1152,8 @@ body {
   line-height: 20.11px;
   letter-spacing: 20%;
   color: #888888;
+}
+
+#role{
+  border: none;
 }
