@@ -721,7 +721,7 @@ button {
 
 @media (max-width: 390px) {
   .site-footer__inner {
-    padding-inline: 20px;
+      padding-inline: clamp(24px, 5vw, 64px);
   }
 
   .site-footer__right img {
@@ -763,7 +763,7 @@ margin-top: 85px;
 .entry-form{
   background: var(--card);
   border-radius: 18px;
-  padding: 24px 24px 10px;
+  padding: 0px 0px 10px;
 }
 
 /* Grid */
@@ -1155,4 +1155,160 @@ body {
 
 #role{
   border: none;
+}
+
+/* =========================
+   Privacy
+========================= */
+.field--privacy{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.privacy-note{
+font-family: Noto Sans JP;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 20.11px;
+letter-spacing: 10%;
+text-align: center;
+
+}
+
+.privacy-required{
+  color: #888;
+  font-weight: 500;
+}
+
+.privacy-link{
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.privacy-check{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(0,0,0,.82);
+  cursor: pointer;
+}
+
+.privacy-check input[type="checkbox"]{
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.privacy-check span{
+  display: inline-block;
+}
+
+@media (max-width: 500px){
+  .field--contact-type{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .field--contact-type .radio-group{
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .field--contact-type .radio{
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .sp-header,
+  .hero,
+  .page,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sp-header {
+    position: relative;
+  }
+
+  .sp-header__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 500px) {
+  .field--name-second {
+    margin-top: -55px;
+  }
+
+  .field--name-second .label {
+    display: none;
+  }
+
+  .privacy-required{
+  color: #888888;
+  font-family: Noto Sans JP;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 13px;
+  line-height: 20.11px;
+  letter-spacing: 20%;
+  }
+
+  .field--kana-second {
+    margin-top: -55px;
+  }
+  .field--kana-second .label{
+      display: none;
+  }
+
+  .privacy-note{
+  font-family: Noto Sans JP;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 20.11px;
+  letter-spacing: 10%;
+  text-align: center;
+  }
 }
