@@ -1312,3 +1312,813 @@ text-align: center;
   text-align: center;
   }
 }
+
+/* =============================================
+   769px - 980px 調整
+   タブレット / ハンバーガーヘッダー / ヒーロー / フォーム / フッター
+   ============================================= */
+@media (min-width: 769px) and (max-width: 980px) {
+
+  /* ---------------------------------------------
+     横スクロール対策
+  --------------------------------------------- */
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip;
+  }
+
+  .sp-header,
+  .hero,
+  .page,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .l-container,
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: clamp(40px, 5vw, 56px);
+    box-sizing: border-box;
+  }
+
+  /* ---------------------------------------------
+     Header
+     769〜980pxではPCヘッダーを非表示
+  --------------------------------------------- */
+  .site-header {
+    display: none;
+  }
+
+  .sp-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    background: #f7f5f0;
+    position: relative;
+  }
+
+  .sp-header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #555;
+    padding: 12px 0 0 24px;
+  }
+
+  .sp-header__brand img {
+    display: block;
+    width: 150px;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .sp-header__site-label {
+    color: #555;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .sp-header__menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    background: #000;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1100;
+    cursor: pointer;
+  }
+
+  .sp-header__menu svg {
+    display: block;
+    width: 22px;
+    height: 18px;
+  }
+
+  /* ---------------------------------------------
+     Tablet nav
+     メニューだけを画面外から出す
+     ページ本体は横に広げない
+  --------------------------------------------- */
+  .sp-nav-overlay,
+  .sp-nav-panel {
+    display: block;
+  }
+
+  .sp-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--sp-nav-overlay);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity var(--sp-nav-open-duration) var(--sp-nav-ease),
+      visibility var(--sp-nav-open-duration) var(--sp-nav-ease);
+    z-index: 1040;
+  }
+
+  .sp-nav {
+    padding: 112px 32px 40px;
+  }
+
+  .sp-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sp-nav__item + .sp-nav__item {
+    margin-top: 24px;
+  }
+
+  .sp-nav__item a {
+    display: inline-block;
+    color: #222;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+  }
+
+  .sp-nav-panel.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .sp-nav-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.is-nav-open {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  body.is-nav-open .sp-header__menu {
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ---------------------------------------------
+     Hero
+  --------------------------------------------- */
+  .hero {
+    height: 420px;
+  }
+
+  .hero__inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero__copy {
+    left: clamp(56px, 8vw, 80px);
+  }
+
+  .hero__subtitle {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .hero__title {
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.65;
+    letter-spacing: 0.12em;
+  }
+
+  .hero__ornament {
+    width: clamp(280px, 34vw, 360px);
+    right: clamp(32px, 6vw, 56px);
+    bottom: 24px;
+  }
+
+  .hero__ornament img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ---------------------------------------------
+     Form area
+  --------------------------------------------- */
+.page {
+  padding-top: 56px;
+  padding-bottom: 72px;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-inline: clamp(40px, 5vw, 56px);
+  box-sizing: border-box;
+}
+
+.form-wrap {
+  width: min(720px, 100%);
+  margin-inline: auto;
+}
+
+.entry-form,
+.form-grid {
+  width: 100%;
+}
+
+.entry-form {
+  padding: 0 0 10px;
+}
+
+.form-grid {
+  grid-template-columns: 1fr 1fr;
+  row-gap: 54px;
+  column-gap: 24px;
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+}
+
+  .label {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+  }
+
+  .req,
+  .required-1 {
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+
+  textarea {
+    min-height: 132px;
+  }
+
+  .hint {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .field--contact-type {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .field--contact-type .label {
+    flex: 0 0 auto;
+    margin: 0;
+    padding-top: 2px;
+  }
+
+  .field--contact-type .radio-group {
+    display: grid;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .radio {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .field--privacy {
+    gap: 14px;
+    text-align: center;
+  }
+
+  .privacy-note {
+    font-size: 15px;
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+  }
+
+  .privacy-check {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .submit {
+    width: 274px;
+    height: 77px;
+    font-size: 18px;
+  }
+
+  .fineprint {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  /* ---------------------------------------------
+     Footer
+  --------------------------------------------- */
+  .site-footer {
+    min-height: 360px;
+  }
+
+  .site-footer__inner {
+    width: 100%;
+    max-width: 100%;
+    min-height: inherit;
+    padding-inline: clamp(40px, 5vw, 56px);
+    padding-top: 64px;
+    padding-bottom: 44px;
+    gap: 36px;
+    align-items: flex-end;
+  }
+
+  .site-footer__left {
+    gap: 20px;
+  }
+
+  .site-footer__bottom {
+    gap: 24px;
+  }
+
+  .site-footer__nav-link,
+  .site-footer__copy {
+    font-size: 14px;
+  }
+
+  .site-footer__right img {
+    width: 220px;
+  }
+}
+
+/* =============================================
+   769px - 980px 横スライド対策
+   off-canvas navを画面外に逃がさない
+============================================= */
+@media (min-width: 769px) and (max-width: 980px) {
+  .sp-nav-panel {
+    display: none;
+    transform: none;
+  }
+
+  .sp-nav-panel.is-open {
+    display: block;
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/* =============================================
+   769px - 980px 横スライド強制対策
+   閉じているSPメニューを横に逃がさない
+============================================= */
+@media (min-width: 769px) and (max-width: 980px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .sp-header,
+  .hero,
+  .page,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* 閉じている時は完全に消す */
+  .sp-nav-panel {
+    display: none;
+    transform: none;
+    right: 0;
+    left: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* 開いた時だけ表示 */
+  .sp-nav-panel.is-open {
+    display: block;
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .sp-nav-overlay {
+    display: none;
+  }
+
+  .sp-nav-overlay.is-open {
+    display: block;
+  }
+}
+
+/* =============================================
+   981px - 1280px 調整
+   PC中間幅 / ヘッダー / ヒーロー / フォーム / フッター
+============================================= */
+@media (min-width: 981px) and (max-width: 1280px) {
+
+  /* ---------------------------------------------
+     横スクロール対策
+  --------------------------------------------- */
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .site-header,
+  .hero,
+  .page,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .l-container,
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: clamp(48px, 5vw, 64px);
+    box-sizing: border-box;
+  }
+
+  /* ---------------------------------------------
+     Header
+     981〜1280pxではPCヘッダーを維持
+  --------------------------------------------- */
+  .site-header {
+    display: block;
+    height: 72px;
+  }
+
+  .site-header__inner {
+    height: 100%;
+  }
+
+  .site-header__logo {
+    width: clamp(190px, 18vw, 240px);
+  }
+
+  .site-header__logo img {
+    width: min(100%, 240px);
+  }
+
+  .site-header__branding {
+    gap: 8px;
+  }
+
+  .site-header__label {
+    font-size: 13px;
+  }
+
+  .site-header__list {
+    gap: clamp(18px, 2vw, 32px);
+  }
+
+  .site-header__link {
+    font-size: 14px;
+    letter-spacing: 0.03em;
+  }
+
+  .sp-header,
+  .sp-header__menu,
+  .sp-nav-overlay,
+  .sp-nav-panel {
+    display: none;
+  }
+
+  /* ---------------------------------------------
+     Hero
+  --------------------------------------------- */
+  .hero {
+    height: 500px;
+  }
+
+  .hero__inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero__copy {
+    left: clamp(72px, 8vw, 104px);
+  }
+
+  .hero__subtitle {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .hero__title {
+    font-size: clamp(26px, 2.4vw, 32px);
+    line-height: 1.65;
+    letter-spacing: 0.12em;
+  }
+
+  .hero__ornament {
+    width: clamp(320px, 28vw, 420px);
+    right: clamp(56px, 7vw, 96px);
+    bottom: 32px;
+  }
+
+  .hero__ornament img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ---------------------------------------------
+     Form area
+  --------------------------------------------- */
+  .page {
+    padding-top: 64px;
+    padding-bottom: 88px;
+    background-color: #F4F2EE;
+  }
+
+  .form-wrap {
+    width: min(760px, 100%);
+    margin-inline: auto;
+  }
+
+  .entry-form,
+  .form-grid {
+    width: 100%;
+  }
+
+  .entry-form {
+    padding: 0 0 10px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 56px;
+    column-gap: 28px;
+  }
+
+  .field--full {
+    grid-column: 1 / -1;
+  }
+
+  .label {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+  }
+
+  .req,
+  .required-1 {
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+
+  textarea {
+    min-height: 136px;
+  }
+
+  .hint {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  /* お問い合わせ項目 */
+  .field--contact-type {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .field--contact-type .label {
+    flex: 0 0 auto;
+    margin: 0;
+    padding-top: 2px;
+  }
+
+  .field--contact-type .radio-group {
+    display: grid;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .radio {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .radio__mark {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* プライバシー同意欄 */
+  .field--privacy {
+    gap: 14px;
+    text-align: center;
+  }
+
+  .privacy-note {
+    font-size: 15px;
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+  }
+
+  .privacy-required {
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+  }
+
+  .privacy-check {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .privacy-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* 送信ボタン */
+  .submit {
+    width: 274px;
+    height: 77px;
+    font-size: 18px;
+  }
+
+  .fineprint {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  /* ---------------------------------------------
+     Footer
+  --------------------------------------------- */
+  .site-footer {
+    min-height: 400px;
+  }
+
+  .site-footer__inner {
+    width: 100%;
+    max-width: 100%;
+    min-height: inherit;
+    padding-inline: clamp(48px, 5vw, 64px);
+    padding-top: 72px;
+    padding-bottom: 48px;
+    gap: 40px;
+    align-items: flex-end;
+  }
+
+  .site-footer__left {
+    gap: 20px;
+  }
+
+  .site-footer__bottom {
+    gap: 28px;
+  }
+
+  .site-footer__nav-link,
+  .site-footer__copy {
+    font-size: 15px;
+  }
+
+  .site-footer__nav-link + .site-footer__nav-link::before {
+    margin-inline: 10px;
+  }
+
+  .site-footer__right img {
+    width: 240px;
+  }
+}
+
+/* =============================================
+   769px - 980px 横スクロール最終対策
+   閉じているSPメニューを完全に消す
+============================================= */
+@media (min-width: 769px) and (max-width: 980px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    position: relative;
+  }
+
+  /* 閉じている時はDOM上にあっても表示・横幅計算に参加させない */
+  #sp-nav-panel:not(.is-open) {
+    display: none !important;
+    transform: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  #sp-nav-overlay:not(.is-open) {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* 開いた時だけ表示 */
+  #sp-nav-panel.is-open {
+    display: block !important;
+    transform: none !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    width: min(360px, 80%);
+    max-width: 100%;
+    height: 100dvh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1050;
+  }
+
+  #sp-nav-overlay.is-open {
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* =============================================
+   横スクロール対策：非表示inputの幅を潰す
+============================================= */
+
+/* ラジオボタンの見えないinputが width:100% で横にはみ出すのを防ぐ */
+.radio {
+  position: relative;
+}
+
+.radio input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 0 !important;
+
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
