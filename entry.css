@@ -1278,7 +1278,7 @@ text-align: center;
 
 @media (max-width: 500px) {
   .field--name-second {
-    margin-top: -55px;
+    margin-top: -40px;
   }
 
   .field--name-second .label {
@@ -1296,7 +1296,7 @@ text-align: center;
   }
 
   .field--kana-second {
-    margin-top: -55px;
+    margin-top: -40px;
   }
   .field--kana-second .label{
       display: none;
