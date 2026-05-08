@@ -1417,7 +1417,7 @@ text-align: center;
 
   /* ---------------------------------------------
      Hero
-  --------------------------------------------- */
+  
   .hero {
     height: 420px;
   }
@@ -1453,7 +1453,7 @@ text-align: center;
     height: 100%;
     object-fit: contain;
   }
-
+--------------------------------------------- */
   /* ---------------------------------------------
      Form area
   --------------------------------------------- */
@@ -1760,46 +1760,6 @@ select {
   .sp-nav-panel {
     display: none;
   }
-
-  /* ---------------------------------------------
-     Hero
-  --------------------------------------------- */
-  .hero {
-    height: 500px;
-  }
-
-  .hero__inner {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .hero__copy {
-    left: clamp(72px, 8vw, 104px);
-  }
-
-  .hero__subtitle {
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-
-  .hero__title {
-    font-size: clamp(26px, 2.4vw, 32px);
-    line-height: 1.65;
-    letter-spacing: 0.12em;
-  }
-
-  .hero__ornament {
-    width: clamp(320px, 28vw, 420px);
-    right: clamp(56px, 7vw, 96px);
-    bottom: 32px;
-  }
-
-  .hero__ornament img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
   /* ---------------------------------------------
      Form area
   --------------------------------------------- */
